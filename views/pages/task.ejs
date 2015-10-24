@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+
+<body>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <h1>Task List:</h1>
+                    <ul class="list-style-type: none;">
+                        <% taskList.forEach(function(task) { %>
+                        <li>
+                            <form method="post" action="/deleteTask/<%= task.id%>">
+                                <span class="glyphicon glyphicon-unchecked"></span> <%= task.name %>
+                                <span class="input-group-btn">
+                            <button class="btn btn-default" type="Submit">deleteTask</button>
+                        </span>
+                            </form>
+                        </li>
+                        <% }); %>
+                    </ul>
+                    <div class="input-group">
+                        <form method="post" action="/addTask">
+                            <input type="text" name="taskName" class="form-control" placeholder="Add new task here">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="Submit">add</button>
+                    </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="../../img/pad.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

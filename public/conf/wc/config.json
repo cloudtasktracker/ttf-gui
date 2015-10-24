@@ -1,0 +1,5 @@
+{
+  "listTaskUrl" : "https://tta-api.herokuapp.com/api/task/list/",
+  "addTaskUri" : "https://tta-api.herokuapp.com/api/task/add/",
+  "deleteTaskUrl" : "https://tta-api.herokuapp.com/api/task/delete/"
+}
